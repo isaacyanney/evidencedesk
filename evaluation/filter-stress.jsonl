@@ -1,0 +1,9 @@
+{"id": "filter-0-all", "split": "filter_stress", "question": "What is the company payroll date?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "all"}
+{"id": "filter-0-en", "split": "filter_stress", "question": "What is the company payroll date?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "en"}
+{"id": "filter-0-de", "split": "filter_stress", "question": "What is the company payroll date?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "de"}
+{"id": "filter-1-all", "split": "filter_stress", "question": "How do I replace a laptop battery?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "all"}
+{"id": "filter-1-en", "split": "filter_stress", "question": "How do I replace a laptop battery?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "en"}
+{"id": "filter-1-de", "split": "filter_stress", "question": "How do I replace a laptop battery?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "de"}
+{"id": "filter-2-all", "split": "filter_stress", "question": "What is the default administrator password?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "all"}
+{"id": "filter-2-en", "split": "filter_stress", "question": "What is the default administrator password?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "en"}
+{"id": "filter-2-de", "split": "filter_stress", "question": "What is the default administrator password?", "relevant_documents": [], "language": "en", "expected_decision": "escalate", "source_language": "de"}

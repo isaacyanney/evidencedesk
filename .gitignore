@@ -1,0 +1,16 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+.env
+var/
+*.sqlite3*
+.cache/
+
+# Generated local browser verification images
+docs/*.png
+node_modules/

@@ -1,0 +1,484 @@
+{
+  "generated_at": "2026-10-17T20:46:02.560074+00:00",
+  "dataset_sha256": "c64820c78baf95fede9f70efd75aae0c7767453dd41684ff96ea7f68dbe0df27",
+  "corpus_version": "145bfeed5f079cf6053fe25bf0ce901f96cbb0c96c939922c2b1d7fd9e8d5b06",
+  "model": null,
+  "model_revision": null,
+  "thresholds": {
+    "lexical": 0.12,
+    "neural": 0.48,
+    "min_term_coverage": 0.2
+  },
+  "environment": {
+    "python": "3.11.17",
+    "platform": "Linux-6.18.55-x86_64-with-glibc2.39",
+    "packages": {
+      "numpy": "2.4.6",
+      "scikit-learn": "1.9.1",
+      "fastapi": "0.143.3"
+    }
+  },
+  "scope": "Curated demonstration retrieval and decision checks; not answer correctness or production evidence.",
+  "results": {
+    "word": {
+      "metrics": {
+        "filter_stress": {
+          "cases": 9,
+          "answerable_cases": 0,
+          "top1_document_accuracy": null,
+          "recall_at_5": null,
+          "mrr_at_5": null,
+          "decision_accuracy": 0.5555555555555556,
+          "unsupported_answer_rate": 0.4444444444444444,
+          "median_retrieval_ms": 1.3640709998981038,
+          "p95_retrieval_ms": 2.087818000063635
+        }
+      },
+      "cases": [
+        {
+          "id": "filter-0-all",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "software.en.md",
+            "meeting.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "phishing.en.md",
+            "mfa.en.md",
+            "password.en.md",
+            "vpn.en.md",
+            "mfa.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "phishing.de.md",
+            "software.de.md",
+            "wifi.de.md",
+            "printer.de.md"
+          ],
+          "latency_ms": 2.087818000063635
+        },
+        {
+          "id": "filter-0-en",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "software.en.md",
+            "meeting.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "phishing.en.md",
+            "mfa.en.md",
+            "password.en.md",
+            "vpn.en.md"
+          ],
+          "latency_ms": 1.6830299998673581
+        },
+        {
+          "id": "filter-0-de",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "mfa.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "phishing.de.md",
+            "software.de.md",
+            "wifi.de.md",
+            "printer.de.md"
+          ],
+          "latency_ms": 1.3640709998981038
+        },
+        {
+          "id": "filter-1-all",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "meeting.en.md",
+            "phishing.en.md",
+            "printer.en.md",
+            "vpn.en.md",
+            "mfa.en.md",
+            "software.en.md",
+            "wifi.en.md",
+            "mfa.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "phishing.de.md",
+            "software.de.md",
+            "password.en.md",
+            "wifi.de.md",
+            "printer.de.md"
+          ],
+          "latency_ms": 1.8497920000299928
+        },
+        {
+          "id": "filter-1-en",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "meeting.en.md",
+            "phishing.en.md",
+            "printer.en.md",
+            "vpn.en.md",
+            "mfa.en.md",
+            "software.en.md",
+            "wifi.en.md",
+            "password.en.md"
+          ],
+          "latency_ms": 1.331642000195643
+        },
+        {
+          "id": "filter-1-de",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "mfa.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "phishing.de.md",
+            "software.de.md",
+            "wifi.de.md",
+            "printer.de.md"
+          ],
+          "latency_ms": 1.3446230000226933
+        },
+        {
+          "id": "filter-2-all",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "password.en.md",
+            "meeting.en.md",
+            "mfa.en.md",
+            "vpn.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "software.en.md",
+            "phishing.en.md",
+            "mfa.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "phishing.de.md",
+            "software.de.md",
+            "wifi.de.md",
+            "printer.de.md"
+          ],
+          "latency_ms": 1.5912190001472482
+        },
+        {
+          "id": "filter-2-en",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "password.en.md",
+            "meeting.en.md",
+            "mfa.en.md",
+            "vpn.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "software.en.md",
+            "phishing.en.md"
+          ],
+          "latency_ms": 1.3283109999520093
+        },
+        {
+          "id": "filter-2-de",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "mfa.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "phishing.de.md",
+            "software.de.md",
+            "wifi.de.md",
+            "printer.de.md"
+          ],
+          "latency_ms": 1.353941999923336
+        }
+      ]
+    },
+    "lexical": {
+      "metrics": {
+        "filter_stress": {
+          "cases": 9,
+          "answerable_cases": 0,
+          "top1_document_accuracy": null,
+          "recall_at_5": null,
+          "mrr_at_5": null,
+          "decision_accuracy": 0.5555555555555556,
+          "unsupported_answer_rate": 0.4444444444444444,
+          "median_retrieval_ms": 1.5447529999619292,
+          "p95_retrieval_ms": 1.6935229998580326
+        }
+      },
+      "cases": [
+        {
+          "id": "filter-0-all",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "software.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "meeting.en.md",
+            "mfa.en.md",
+            "password.en.md",
+            "phishing.en.md",
+            "vpn.en.md",
+            "printer.de.md",
+            "password.de.md",
+            "software.de.md",
+            "phishing.de.md",
+            "meeting.de.md",
+            "mfa.de.md",
+            "wifi.de.md",
+            "vpn.de.md"
+          ],
+          "latency_ms": 1.6372479999517964
+        },
+        {
+          "id": "filter-0-en",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "software.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "meeting.en.md",
+            "mfa.en.md",
+            "password.en.md",
+            "phishing.en.md",
+            "vpn.en.md"
+          ],
+          "latency_ms": 1.2913150001168106
+        },
+        {
+          "id": "filter-0-de",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "printer.de.md",
+            "password.de.md",
+            "software.de.md",
+            "phishing.de.md",
+            "meeting.de.md",
+            "mfa.de.md",
+            "wifi.de.md",
+            "vpn.de.md"
+          ],
+          "latency_ms": 1.6935229998580326
+        },
+        {
+          "id": "filter-1-all",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "meeting.en.md",
+            "phishing.en.md",
+            "vpn.en.md",
+            "mfa.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "software.en.md",
+            "password.en.md",
+            "wifi.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "software.de.md",
+            "printer.de.md",
+            "mfa.de.md",
+            "phishing.de.md"
+          ],
+          "latency_ms": 1.562501000080374
+        },
+        {
+          "id": "filter-1-en",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "meeting.en.md",
+            "phishing.en.md",
+            "vpn.en.md",
+            "mfa.en.md",
+            "printer.en.md",
+            "wifi.en.md",
+            "software.en.md",
+            "password.en.md"
+          ],
+          "latency_ms": 1.5654979999908392
+        },
+        {
+          "id": "filter-1-de",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "wifi.de.md",
+            "password.de.md",
+            "vpn.de.md",
+            "meeting.de.md",
+            "software.de.md",
+            "printer.de.md",
+            "mfa.de.md",
+            "phishing.de.md"
+          ],
+          "latency_ms": 1.3089050000871794
+        },
+        {
+          "id": "filter-2-all",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "password.en.md",
+            "meeting.en.md",
+            "mfa.en.md",
+            "vpn.en.md",
+            "printer.en.md",
+            "software.en.md",
+            "wifi.en.md",
+            "phishing.en.md",
+            "mfa.de.md",
+            "password.de.md",
+            "software.de.md",
+            "vpn.de.md",
+            "printer.de.md",
+            "meeting.de.md",
+            "wifi.de.md",
+            "phishing.de.md"
+          ],
+          "latency_ms": 1.5447529999619292
+        },
+        {
+          "id": "filter-2-en",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "answer",
+          "decision_correct": false,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "password.en.md",
+            "meeting.en.md",
+            "mfa.en.md",
+            "vpn.en.md",
+            "printer.en.md",
+            "software.en.md",
+            "wifi.en.md",
+            "phishing.en.md"
+          ],
+          "latency_ms": 1.3361999999688123
+        },
+        {
+          "id": "filter-2-de",
+          "split": "filter_stress",
+          "expected": "escalate",
+          "actual": "escalate",
+          "decision_correct": true,
+          "top1_relevant": false,
+          "recall_at_5": null,
+          "reciprocal_rank": 0,
+          "ranked_documents": [
+            "mfa.de.md",
+            "password.de.md",
+            "software.de.md",
+            "vpn.de.md",
+            "printer.de.md",
+            "meeting.de.md",
+            "wifi.de.md",
+            "phishing.de.md"
+          ],
+          "latency_ms": 1.3023690000864008
+        }
+      ]
+    }
+  }
+}

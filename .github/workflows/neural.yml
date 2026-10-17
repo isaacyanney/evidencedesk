@@ -1,0 +1,32 @@
+name: Neural retrieval evaluation
+on:
+  workflow_dispatch:
+    inputs:
+      model_revision:
+        description: Exact embedding model commit SHA (required for reproducibility)
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  neural-evaluation:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      EMBEDDING_REVISION: ${{ inputs.model_revision }}
+      RUN_NEURAL_TESTS: "1"
+      OMP_NUM_THREADS: 2
+      TOKENIZERS_PARALLELISM: "false"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install torch==2.14.1 --index-url https://download.pytorch.org/whl/cpu
+      - run: pip install -r requirements.lock && pip install -e ".[neural,dev]"
+      - run: python -m evidencedesk.evaluate --neural --output evaluation/neural-results.json
+      - run: python -m pytest tests/test_neural.py -q
+      - uses: actions/upload-artifact@v4
+        with:
+          name: neural-retrieval-evidence
+          path: evaluation/neural-results.json

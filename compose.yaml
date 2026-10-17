@@ -1,0 +1,31 @@
+services:
+  evidencedesk:
+    build:
+      context: .
+      target: base
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_ENV: production
+      API_KEY: ${API_KEY:?Set a random API_KEY of at least 32 characters in .env}
+      DATABASE_PATH: /app/var/evidencedesk.sqlite3
+      RETRIEVAL_BACKEND: lexical
+      GENERATOR: extractive
+      RATE_LIMIT_PER_MINUTE: 30
+      MAX_CONCURRENT: 4
+    volumes:
+      - audit:/app/var
+    read_only: true
+    tmpfs:
+      - /tmp:size=64m,mode=1777
+    cap_drop:
+      - ALL
+    security_opt:
+      - no-new-privileges:true
+    pids_limit: 128
+    mem_limit: 1g
+    cpus: 2
+    restart: unless-stopped
+    stop_grace_period: 20s
+volumes:
+  audit:
