@@ -2,7 +2,7 @@
 
 ## Supported scope
 
-One small Linux host, one Uvicorn worker, CPU inference and a persistent local SQLite volume. The baseline is designed for roughly 1 GiB RAM and the neural overlay budgets 3 GiB; these are Compose limits, not measured capacity guarantees. Latency, model startup time and host requirements must be checked on the target machine. Docker execution was not available during development.
+One small Linux host, one Uvicorn worker, CPU inference and a persistent local SQLite volume. The baseline is designed for roughly 1 GiB RAM and the neural overlay budgets 3 GiB; these are Compose limits, not measured capacity guarantees. Latency, model startup time and host requirements must be checked on the target machine. Docker execution was unavailable locally. The bundled baseline container build and authenticated inference check passed in GitHub Actions run 39069009174. Public hosting and the optional neural container remain unverified.
 
 ## Local container
 

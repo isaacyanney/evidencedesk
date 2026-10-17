@@ -1,6 +1,6 @@
 # Verification record
 
-Recorded 17 October 2026. These checks were executed locally. CI configuration is included, but no GitHub Actions run or Docker deployment is claimed.
+Recorded 17 October 2026. Local checks and the first published CI run are recorded separately below. The source is published; no publicly hosted application is claimed.
 
 | Check | Observed result |
 | --- | --- |
@@ -17,10 +17,13 @@ Recorded 17 October 2026. These checks were executed locally. CI configuration i
 | Neural evaluation | Executed with actual 384-dimensional pretrained embeddings on CPU |
 | Post hoc source-filter diagnostic | Executed separately; failures retained |
 | Compose and workflow YAML parsing | Passed syntax parsing; not Docker semantic validation |
-| Docker build/run | Not executed: Docker is unavailable in this environment |
+| Baseline Docker build/run | Passed in GitHub Actions: image built, service became ready, missing key rejected and authenticated inference returned a citation |
 | Real Ollama drafting | Not executed: no Ollama service was available; HTTP contract and failure paths tested with mocks |
-| External hosting / GitHub Actions | Not executed; no deployment URL or CI success badge claimed |
+| GitHub Actions | Python 3.11, Python 3.12 and container jobs all passed in run 39069009174 |
+| External application hosting | Not executed; no application deployment URL claimed |
 
 The test client emits a dependency deprecation warning about a future HTTP client transition. It does not fail the current checked versions. Optional model dependencies and the model cache require validation on the deployment host. The baseline runtime is pinned in `requirements.lock`; optional neural dependencies are version-ranged and the actual evaluated versions are recorded in the neural JSON artifact.
 
 Source extraction does not establish relevance. Evaluation shows unsupported answer decisions and limited cross-language performance; see `EVALUATION.md`. A configured deployment package is not evidence of production accuracy, scale or live operation.
+
+Published CI evidence: [Validate and package, run 39069009174](https://github.com/isaacyanney/evidencedesk/actions/runs/39069009174), commit `ccbc2661461830e498b6fc25cd9a7dddcd469e94`. The CI Docker result covers the baseline target, not the optional neural image or a public deployment.

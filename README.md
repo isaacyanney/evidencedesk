@@ -89,7 +89,7 @@ python -c "import secrets; print(secrets.token_urlsafe(32))"
 docker compose up --build -d
 ```
 
-Open `http://127.0.0.1:8000` and enter the key in Workspace access. Compose binds only to loopback. Before exposing it, place it behind HTTPS and organization access control. This is a single-instance deployment with one shared service key, not a multitenant identity system. Docker was not available for local execution; CI includes the pending container build and authenticated smoke test.
+Open `http://127.0.0.1:8000` and enter the key in Workspace access. Compose binds only to loopback. Before exposing it, place it behind HTTPS and organization access control. This is a single-instance deployment with one shared service key, not a multitenant identity system. Docker was not available for local execution. The container build and authenticated inference smoke test passed in [GitHub Actions](https://github.com/isaacyanney/evidencedesk/actions/runs/39069009174). Target-host and public-hosting checks remain separate.
 
 Full configuration, neural deployment, backups and rollback: [deployment guide](docs/DEPLOYMENT.md).
 
