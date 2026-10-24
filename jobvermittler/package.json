@@ -1,0 +1,36 @@
+{
+  "name": "jobvermittler",
+  "version": "1.0.0",
+  "type": "module",
+  "imports": {
+    "#*": "./agent/*",
+    "#evals/*": "./evals/*"
+  },
+  "scripts": {
+    "build": "eve build",
+    "deploy": "eve deploy",
+    "dev": "eve dev",
+    "eval": "eve eval",
+    "start": "eve start",
+    "typecheck": "tsc",
+    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "dashboard": "node --env-file-if-exists=.env --experimental-strip-types server/index.ts",
+    "setup": "node scripts/setup.mjs",
+    "check": "npm run typecheck && npm test && npm run build",
+    "import-profile": "node --env-file-if-exists=.env --experimental-strip-types scripts/import-profile.ts"
+  },
+  "dependencies": {
+    "@vercel/connect": "2.5.2",
+    "ai": "7.0.137",
+    "eve": "0.83.0",
+    "just-bash": "3.6.0",
+    "zod": "4.5.4"
+  },
+  "devDependencies": {
+    "@types/node": "24.x",
+    "typescript": "7.0.2"
+  },
+  "engines": {
+    "node": "24.x"
+  }
+}

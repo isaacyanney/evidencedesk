@@ -1,0 +1,2 @@
+import { defineSchedule } from 'eve/schedules';
+export default defineSchedule({cron:'0 6 * * 1-5',markdown:'Morning employment review: read context. Without a profile, stop without research. Review interviews, offers and due follow-ups. Search and verify realistic vacancies, assess with evidence, prepare up to three strong drafts, then save_report with findings, unresolved questions, and the three best next actions. Do not contact employers or imply submissions. Follow research limits. This is unattended: record questions in the report.'});

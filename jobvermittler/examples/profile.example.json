@@ -1,0 +1,9 @@
+{
+ "name":"Your name",
+ "location":"Berlin, Germany",
+ "goal":"Secure suitable full-time paid employment as soon as possible.",
+ "preferences":["Prioritize realistic entry requirements and early paid starts.","Prepare complete documents for review before employer contact."],
+ "evidence":[{"id":"example-experience","fact":"Replace this example with your actual employment and responsibilities.","source":"Your current CV"}],
+ "uncertainties":["Confirm availability, minimum hours/pay, commute and work eligibility."],
+ "excludedEmployers":[]
+}
