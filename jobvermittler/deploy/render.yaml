@@ -1,0 +1,35 @@
+# Deployment proposal. Creating this service incurs provider charges.
+# Use Blueprint path jobvermittler/deploy/render.yaml on branch jobvermittler.
+services:
+  - type: web
+    name: jobvermittler-private
+    runtime: node
+    repo: https://github.com/isaacyanney/evidencedesk
+    branch: jobvermittler
+    rootDir: jobvermittler
+    region: frankfurt
+    plan: 0.5c-512mb
+    numInstances: 1
+    buildCommand: npm ci && npm run typecheck && npm test && npm run build
+    startCommand: npm run serve
+    healthCheckPath: /healthz
+    autoDeployTrigger: 'off'
+    disk:
+      name: employment-private-data
+      mountPath: /var/data/jobvermittler
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 24.19.0
+      - key: JOBVERMITTLER_TOKEN
+        generateValue: true
+      - key: AI_GATEWAY_API_KEY
+        sync: false
+      - key: JOBVERMITTLER_PERSISTENT_DIR
+        value: /var/data/jobvermittler
+      - key: DASHBOARD_HOST
+        value: 0.0.0.0
+      - key: EVE_SCHEDULES_DISABLED
+        value: '1'
+      - key: EVE_TELEMETRY_DISABLED
+        value: '1'

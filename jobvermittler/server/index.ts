@@ -10,7 +10,8 @@ import { authorized,sameOrigin } from './security.ts';
 
 const token=process.env.JOBVERMITTLER_TOKEN;
 if(!token||token.length<32)throw new Error('Run npm run setup to create a private access token first.');
-const db=store(),port=Number(process.env.DASHBOARD_PORT||3000);
+const db=store(),port=Number(process.env.DASHBOARD_PORT||process.env.PORT||3000);
+const host=process.env.DASHBOARD_HOST||'127.0.0.1';
 const client=new Client({host:process.env.EVE_HOST||'http://127.0.0.1:2000',auth:{bearer:token},redirect:'error'});
 for(const task of db.list('task'))if(task.status==='running'){db.put('task',task.id,{...task,status:'interrupted',message:'Dashboard restarted. Check the agent before starting another search.'});}
 let busy=false;
@@ -21,6 +22,10 @@ const server=createServer(async(req,res)=>{
  try{
   const path=new URL(req.url||'/','http://localhost').pathname;
   const assets:Record<string,[string,string]>={'/':['index.html','text/html; charset=utf-8'],'/app.js':['app.js','text/javascript'],'/style.css':['style.css','text/css']};
+  if(req.method==='GET'&&path==='/healthz'){
+   try{const r=await fetch(new URL('/eve/v1/health',process.env.EVE_HOST||'http://127.0.0.1:2000'),{signal:AbortSignal.timeout(3000)});const result=await r.json();send(r.ok&&result.ok===true?200:503,{ok:r.ok&&result.ok===true});}
+   catch{send(503,{ok:false});}return;
+  }
   if(req.method==='GET'&&assets[path]){const [file,type]=assets[path];res.writeHead(200,{'Content-Type':type});res.end(await readFile(fileURLToPath(new URL('../web/'+file,import.meta.url))));return;}
   if(!authorized(req.headers.authorization,token)){send(401,{error:'Your private access token is required.'});return;}
   if(!sameOrigin(req.headers.origin,req.headers.host)){send(403,{error:'Cross-origin request rejected'});return;}
@@ -47,4 +52,4 @@ const server=createServer(async(req,res)=>{
   send(404,{error:'Not found'});
  }catch(e){send(400,{error:e instanceof Error?e.message.slice(0,1500):'Request failed'});}
 });
-server.listen(port,'127.0.0.1',()=>console.log(`Private dashboard: http://127.0.0.1:${port}`));
+server.listen(port,host,()=>console.log(`Private dashboard listening on ${host}:${port}`));

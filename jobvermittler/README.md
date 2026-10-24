@@ -16,6 +16,10 @@ This directory is a standalone Node 24 application. It lives on the `jobvermittl
 - A weekday morning research schedule at 06:00 UTC (08:00 Berlin in summer, 07:00 in winter). It writes reports in the dashboard; it does not send notifications. The schedule runs only while the production eve process is running.
 - Access token authentication, loopback-only listeners, no browser persistence of the token, parameterized database queries, restricted file serving and a conservative browser content-security policy.
 
+## Private online deployment
+
+A prepared Render deployment is in [deploy/render.yaml](deploy/render.yaml), with activation steps and cost assumptions in [deploy/ACTIVATE.md](deploy/ACTIVATE.md). It runs the dashboard and agent together, stores records and workflow data on one persistent disk, and keeps schedules disabled until the first live turn is verified. No paid service has been created.
+
 ## Start locally
 
 You need Node.js 24, npm, and an AI Gateway credential for AI conversations and web search. API usage and search may incur charges; the model-token limit below is not a total spending cap.

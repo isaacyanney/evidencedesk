@@ -13,11 +13,13 @@
     "eval": "eve eval",
     "start": "eve start",
     "typecheck": "tsc",
-    "test": "node --experimental-strip-types --test tests/*.test.ts",
+    "test": "node --experimental-strip-types --test tests/*.test.ts tests/*.test.mjs",
     "dashboard": "node --env-file-if-exists=.env --experimental-strip-types server/index.ts",
     "setup": "node scripts/setup.mjs",
     "check": "npm run typecheck && npm test && npm run build",
-    "import-profile": "node --env-file-if-exists=.env --experimental-strip-types scripts/import-profile.ts"
+    "import-profile": "node --env-file-if-exists=.env --experimental-strip-types scripts/import-profile.ts",
+    "serve": "node --env-file-if-exists=.env scripts/serve.mjs",
+    "check-access": "node --env-file-if-exists=.env scripts/check-access.mjs"
   },
   "dependencies": {
     "@vercel/connect": "2.5.2",
